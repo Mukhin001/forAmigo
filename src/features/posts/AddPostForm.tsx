@@ -1,14 +1,9 @@
-import React, { FC, SetStateAction } from 'react';
+import React from 'react';
 
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-
-import { type Post, postAdded } from '../posts/postsSlice';
+import { useAppDispatch } from '../../app/hooks';
 import { changeDisplay } from './openFormSlice';
-import { Dispatch } from '@reduxjs/toolkit';
 
 
-// TS types for the input fields
-// See: https://epicreact.dev/how-to-type-a-react-form-on-submit-handler/
 interface AddPostFormFields extends HTMLFormControlsCollection {
   postTitle: HTMLInputElement
   postContent: HTMLTextAreaElement
@@ -17,34 +12,16 @@ interface AddPostFormElements extends HTMLFormElement {
   readonly elements: AddPostFormFields
 };
 
-interface PerentProps {
-    title: string,
-    setTitle: React.Dispatch<React.SetStateAction<string>>,
-    content: string,
-    setContent: React.Dispatch<React.SetStateAction<string>>,
-}
-
-export const AddPostForm = ({ title, setTitle, content, setContent}: PerentProps) => {
+export const AddPostForm = () => {
     const dispatch = useAppDispatch();
-    const openForm = useAppSelector(state => state.openForm.value);
-    //const displayValue = useAppSelector(state => state.openForm.value);
-    let posts = useAppSelector(state => state.posts.length);
-   
-    
-    // const newPost: Post = {
-    //     id: posts + 1,  
-    //     title: '',
-    //     content: '',
-    // };
 
     const handleSubmit = (e: React.FormEvent<AddPostFormElements>) => {
         // Prevent server submission
         e.preventDefault()
-        setTitle('');
-        setContent('');
         e.currentTarget.reset();
         dispatch(changeDisplay());
     };
+
 
     return (
         <section>
@@ -56,13 +33,13 @@ export const AddPostForm = ({ title, setTitle, content, setContent}: PerentProps
                 margin: 10,
             }}>
                 <label htmlFor="postTitle">Post Title:</label>
-                <input type="text" id="postTitle" value={title} required 
-                    onChange={e => setTitle(e.target.value)}
+                <input type="text" id="postTitle" value={'title'} required 
+                    onChange={(e) => ''}
                 />
 
                 <label htmlFor="postContent">Content:</label>
-                <textarea id="postContent" name="postContent" value={content} required 
-                    onChange={e => setContent(e.target.value)} 
+                <textarea id="postContent" name="postContent"  required 
+                    onChange={e => e} 
                 />
                 <button>Save Post</button>
             </form>
