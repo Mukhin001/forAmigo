@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import postsReducer from '../features/posts/postsSlice';
-import openDisplayReduser from '../components/openFormSlice';
+import openFormReduser from '../features/posts/openFormSlice';
 
 export const store = configureStore({
     reducer: {
         posts: postsReducer,
-        openDispale: openDisplayReduser,
+        openForm: openFormReduser,
     },
 });
 

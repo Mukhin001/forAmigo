@@ -9,7 +9,7 @@ const initialState: OpenForm = {
 };
 
 const openFormSlice = createSlice({
-    name: 'openDispale',
+    name: 'openForm',
     initialState,
     reducers: {
         changeDisplay: (state, ) => {

@@ -1,10 +1,5 @@
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { changeDisplay } from "./openFormSlice";
-
 
 export const Navbar = () => {
-    const dispatch = useAppDispatch();
-    const openDispalay = useAppSelector(state => state.openDispale.value);
 
     return (
         <nav>
@@ -14,8 +9,6 @@ export const Navbar = () => {
                 <div className="navContent">
                 <div className="navLinks"></div>
                 </div>
-                <button 
-                    onClick={() => dispatch(changeDisplay())}>{openDispalay ? 'Close' : 'Open'}</button>
             </section>
         </nav>
     )
