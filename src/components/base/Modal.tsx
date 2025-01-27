@@ -1,22 +1,11 @@
-interface PropsPerent {
-    title: string,
-    p: string,
-    setOpenModal: React.Dispatch<React.SetStateAction<boolean>>,
-};
 
-const Modal = ({ title, p, setOpenModal }: PropsPerent) => {
+
+const Modal = (props: any) => {
+    
     return ( 
-        <section
-            style={{
-                border: '2px solid white',
-                borderRadius: 10,
-            }}
-        >
-            <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-                <button onClick={() => setOpenModal(false)}>X</button>
-            </div>
-            <h2>{title}</h2>
-            <p>{p}</p>
+        <section style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            {props.children}
+            <button onClick={() => props.setClickState(false)}>X</button>
         </section>
      );
 };
