@@ -1,0 +1,19 @@
+.snaksWrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    gap: 10px;
+    padding: 0px 10px;
+    border-radius: 10px;
+    background: rgba(249, 246, 249, 0.995);
+    color: black;
+}
+
+.btnCloseSnaks {
+    padding: 2px 5px;
+    color: black;
+}
+
+p {
+    margin: 5px 10px;
+}
