@@ -1,0 +1,33 @@
+.wrapperTooltip {
+    position: relative;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 1s ease;
+    border-radius: 10PX;
+}
+
+.wrapperTooltip H3 {
+    margin: 0;
+}
+
+.popUpTooltip {
+    position: absolute;
+    background-color: antiquewhite;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 10PX;
+    display: none;
+}
+
+.popUpTooltip h4 {
+    margin: 0;
+}
+
+.wrapperTooltip:hover {
+    background-color: rgb(18, 12, 15);
+    color: white;
+}
+
+.wrapperTooltip:hover .popUpTooltip {
+    display: block;
+}

@@ -1,0 +1,11 @@
+.wrapperDrawer {
+    background-color: blueviolet;
+    border: 2px solid salmon;
+    padding-right: 20px;
+    transition: all 1s ease;
+    position: fixed;
+}
+
+li {
+    list-style: none;
+}
