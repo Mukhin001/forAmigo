@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import Drawer from "./drawer/Drawer";
+import Drawer from "../drawer/Drawer";
 import { useState } from "react";
+import './style.css';
 
 export const Navbar = () => {
     const [translate, setTranslate] = useState<boolean>(true);
@@ -10,21 +11,13 @@ export const Navbar = () => {
     };
 
     return (
-        <nav style={{marginBottom: 20}}>
+        <nav className="navWrapper">
             <section>
                 <h1>Redux Essentials Example</h1>
-                <article 
-                        style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                        }}>
-                    <div 
-                        style={{
-                            display: 'flex',
-                            gap: 20
-                        }}
-                    >
+                <article className="linksWrapper">
+                    <div className="linksWrapperDiv">
                         <Link to='/'>Home</Link>
+                        <Link to='/form'>Form</Link>
                         <Link to='/modalone' >Modal One</Link>
                         <Link to='/modaltwo' >Modal Two</Link>
                     </div>

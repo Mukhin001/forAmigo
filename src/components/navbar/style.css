@@ -1,0 +1,15 @@
+.navWrapper {
+    margin-bottom: 20px;
+}
+
+.linksWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.linksWrapperDiv {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
